@@ -3,6 +3,20 @@ entries:
   kafka:
   - apiVersion: v2
     appVersion: 1.0.1
+    created: "2025-02-27T16:53:53.971318736Z"
+    dependencies:
+    - name: kafka
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: ~31.4.0
+    description: A minimal Kafka deployment using Bitnami
+    digest: b4b731d583f5011eee5030f8ba5ead576d13a5c8a56a0f356ec58984c14be983
+    name: kafka
+    type: application
+    urls:
+    - https://github.com/natelynate/fatigue_detector_release/releases/download/kafka-0.1.2/kafka-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.0.1
     created: "2025-02-27T16:45:51.286924906Z"
     dependencies:
     - name: kafka
@@ -29,4 +43,4 @@ entries:
     urls:
     - https://github.com/natelynate/fatigue_detector_release/releases/download/kafka-0.1.0/kafka-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-27T16:45:51.286934955Z"
+generated: "2025-02-27T16:53:53.971330047Z"
