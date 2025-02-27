@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v2
 name: kafka
 description: A minimal Kafka deployment using Bitnami
 type: application
