@@ -1,13 +1,2 @@
-# Option 1
-replicaCount: 4
-
-# Option 2
-kafka:
-  replicas: 4
-
-# Option 3
 broker:
-  replicaCount: 4
-
-# Option 4
-replicaCount: 4
+  replicaCount: 2
