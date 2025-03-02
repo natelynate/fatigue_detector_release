@@ -1,0 +1,36 @@
+fastapi:
+  image: python:3.11
+  sourceCode: # source code를 mount된 volume에서 읽어오는 건 kubernetes node 가 2개 이상이 되는 순간부터 어그러질 수도 있음.
+    hostPath: /home/ubuntu/project/src/ # Machine directory
+    containerPath: /src # translates that machine directory to containerPath in the cluster
+  replicaCount: 2
+  # Environment variables matching .env file
+  env:
+    # Token settings
+    SECRET_KEY: "your-secret-key-here"
+    ALGORITHM: "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: "30"
+    REFRESH_TOKEN_EXPIRE_DAYS: "7"
+    
+    # Database Settings
+    DATABASE_HOST: "ec2-3-36-88-171.ap-northeast-2.compute.amazonaws.com"
+    DATABASE_PORT: "5432"
+    DATABASE_USER: "postgres"
+    DATABASE_PASSWORD: ""
+    DATABASE_NAME: "operation"
+    
+    # SSH Settings
+    SSH_HOST: "ec2-3-36-88-171.ap-northeast-2.compute.amazonaws.com"
+    SSH_USER: "ubuntu"
+    SSH_KEY_PATH: "aws-db-server-key.pem"
+    SSH_PORT: "22"
+    SSH_KEY_PW: "123"
+    
+    # Kafka Settings
+    KAFKA_SERVER: "kafka"  # This points to the Kafka service
+    KAFKA_PORT: "9092"
+
+
+service:
+  type: ClusterIP
+  port: 8000

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.fastapi.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: fastapi
+        image: {{ .Values.fastapi.image }}
+        command: ["/bin/bash"]
+        args:
+          - "-c"
+          - "cd {{ .Values.fastapi.sourceCode.containerPath }} && pip install -r requirements.txt && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+        ports:
+        - containerPort: 8000
+        volumeMounts:
+        - name: app-code
+          mountPath: {{ .Values.fastapi.sourceCode.containerPath }}
+        env:
+        {{- range $key, $value := .Values.fastapi.env }}
+        - name: {{ $key }}
+          value: {{ $value | quote }}
+        {{- end }}
+      volumes:
+      - name: app-code
+        hostPath:
+          path: {{ .Values.fastapi.sourceCode.hostPath }}
