@@ -2,10 +2,10 @@ apiVersion: v2
 name: fastapi
 description: fastapi
 type: application
-version: 0.1.0
+version: 0.1.1
 appVersion: "1.1.0"
 dependencies:
   - name: kafka
-    version: 0.1.4
+    version: 0.1.5
     repository: https://natelynate.github.io/fatigue_detector_release/
     condition: kafka.enabled
