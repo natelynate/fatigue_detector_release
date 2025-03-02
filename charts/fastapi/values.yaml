@@ -27,7 +27,7 @@ fastapi:
     SSH_KEY_PW: "123"
     
     # Kafka Settings
-    KAFKA_SERVER: "kafka"  # This points to the Kafka service
+    KAFKA_SERVER: "kafka-controller-headless"  # This points to the Kafka service
     KAFKA_PORT: "9092"
 
 
