@@ -3,7 +3,7 @@ fastapi:
   sourceCode: # source code를 mount된 volume에서 읽어오는 건 kubernetes node 가 2개 이상이 되는 순간부터 어그러질 수도 있음.
     hostPath: /home/ubuntu/project/src/ # Machine directory
     containerPath: /src # translates that machine directory to containerPath in the cluster
-  replicaCount: 2
+  replicaCount: 1
   # Environment variables matching .env file
   env:
     # Token settings
