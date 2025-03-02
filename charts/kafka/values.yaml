@@ -2,3 +2,8 @@ kafka:
   controller:
     replicaCount: 1
   auth.enabled: false # disabled for development
+  listeners:
+  client:
+    protocol: 'PLAINTEXT'
+  controller:
+    protocol: 'PLAINTEXT'
