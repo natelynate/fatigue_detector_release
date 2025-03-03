@@ -3,6 +3,16 @@ entries:
   fastapi:
   - apiVersion: v2
     appVersion: 1.1.1
+    created: "2025-03-03T06:54:15.812578994Z"
+    description: fastapi
+    digest: 8c127e299c8b6f0e76f2123fdf6432790735273c804b3794f7968217a68f2e89
+    name: fastapi
+    type: application
+    urls:
+    - https://github.com/natelynate/fatigue_detector_release/releases/download/fastapi-0.1.6/fastapi-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 1.1.1
     created: "2025-03-03T06:07:33.85763866Z"
     description: fastapi
     digest: e288dc95a8acac53518cf2f32fbdf0942f5ab472990085afa96797c481fbd058
@@ -192,4 +202,4 @@ entries:
     urls:
     - https://github.com/natelynate/fatigue_detector_release/releases/download/kafka-0.1.0/kafka-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-03T06:07:33.857682011Z"
+generated: "2025-03-03T06:54:15.812623407Z"
