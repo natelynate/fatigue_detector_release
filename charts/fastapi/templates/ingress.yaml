@@ -10,24 +10,15 @@ spec:
   ingressClassName: {{ .Values.ingress.className }}
   tls:
   {{ range .Values.ingress.tls }}
-  - hosts:
-    {{ range .hosts }}
-    - {{ . }}
-    {{ end }}
-    secretName: {{ .secretName }}
+  - secretName: {{ .secretName }}
   {{ end }}
   rules:
-  {{ range .Values.ingress.hosts }}
-  - host: {{ .host }}
-    http:
+  - http:
       paths:
-      {{ range .paths }}
-      - path: {{ .path }}
-        pathType: {{ .pathType }}
+      - path: /
+        pathType: Prefix
         backend:
           service:
             name: {{ $.Release.Name }}
             port:
               number: 8000
-      {{ end }}
-  {{ end }}
